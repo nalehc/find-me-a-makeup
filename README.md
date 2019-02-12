@@ -7,17 +7,6 @@ Recommender to extract text features of makeup description and find a similar pr
 
 ## Recommender
 
-I used TF-IDF vectorization from SkLearn and built a text reccomender which utilized a 
-Non-negative matrix factorization technique to reccomend similar text. The input is a user generated text string, which can be copy pasted from elsewhere or typed. I do plan to build a web application to make this more user friendly at some point. The reccomender also relies on extracted descriptive words (adjectives) in the base text. With minimal modification, I'd imagine the recomender could be currated for the user's own makeup collection. 
+The newest iteration of the reccomender uses LSA for dimensionality reduction combined with a KNN model of count vectorized reviews. The input is a user generated text string, which can be copy pasted from elsewhere or typed. A flask app is coming very soon!
 
-## Additional Information Extracted
 
-The type of product and price was extracted from the review body using a combination of regular expressions and SVM modeling. This enabled the recommender to fetch a result of the desired type and price range. 
-
-## Tableau Dash
-
-An overall view of the review information can be seen via a Tableau dashboard I've built [here](https://public.tableau.com/profile/chelan.patton#!/vizhome/MakeupData/Dashboard1). This fulfills a similar functionality to another tool on the blog, which lets the user browse products by texture, color, or score.
-
-A demo for the dashboard can be seen below:
-
-[link](https://drive.google.com/file/d/186F_A7hdddxBYqkhaTB1rqsfY8wWt7Ui/view?usp=sharing)
