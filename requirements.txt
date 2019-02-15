@@ -102,9 +102,6 @@ grpcio==1.14.1
 h5py==2.7.0
 heapdict==1.0.0
 html5lib==0.9999999
-httplib2==0.11.2
-hyperopt==0.1
-idna==2.6
 imageio==2.2.0
 imagesize==0.7.1
 imbalanced-learn==0.3.3
