@@ -3,15 +3,17 @@ import pickle
 import random
 import numpy as np
 import os
+import pandas as pd
 
 app = Flask('__name__')
 
 lsa_ = pickle.load(open('./dim_red.pkl', 'rb'))
 count_vectorizer = pickle.load(open('./vectorizer.pkl', 'rb'))
 nn = pickle.load(open('./model.pkl', 'rb'))
+new_df = pickle.load(open('./reviews.pkl', 'rb'))
 
 def get_nearest_prods(description):
-    new_vec = lsa_.transform(count_vectorizer.transform([description]))
+    new_vec = lsa_.transform(count_vectorizer.transform([description['description']]))
     results = nn.kneighbors(new_vec, n_neighbors=5)
     rec_strings = []
     for i in range(len(results[1][0])):
@@ -20,16 +22,13 @@ def get_nearest_prods(description):
 
 @app.route('/')
 def landing_page():
-    greetings = ['Making makup wishes come true since 2019', 'Your wish is my command',
-    'That floating feeling']
-    greeting_choice = random.choice(greetings)
-    return render_template("index.html", greeting_choice = greeting_choice)
+    return render_template("index.html")
 
 @app.route('/predict', methods=['POST'])
 def score_api():
     if not request.json:
         abort(400)
-    response = make_prediction(request.json['data'])
+    response = get_nearest_prods(request.json['data'])
     return jsonify(response), 201
 
 if __name__ == '__main__':

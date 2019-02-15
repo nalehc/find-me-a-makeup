@@ -1,13 +1,31 @@
 <html>
-    <head>
-        <title>The Makeup Genie</title>
-      	<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
-    </head>
-    <body>
-        <h1>{{ greeting_choice }}!</h1>
-    </body>
-    <footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    </footer>
+
+  <head>
+    <title>The Makeup Genie</title>
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col"><img src="{{ url_for('static', filename='treasure.png') }}" alt="treasure"></div>
+      <div class="col"><img src="{{ url_for('static', filename='lamp.png') }}" alt="lamp"></div>
+    </div>
+    <div class="jumbotron text-center">
+      <h1>The Makeup Genie</h1>
+      <p>Let me help you find a product! Type in a description of what you want.</p>
+      <form>
+        <div class="form-group">
+          <input class="form-control input-sm" id="input" type="text">
+        </div>
+        <a class="btn btn-primary btn-lg" id='model_input' onclick='updateScore()' role="button">Make some magic!</a>
+      </form>
+    </div>
+    <div class="text-center" id="output" style="white-space:pre-wrap;"></div>
+    <script type='text/javascript' src="{{ url_for('static', filename='model_input.js') }}"></script>
+  </body>
+  <footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </footer>
+
 </html>
