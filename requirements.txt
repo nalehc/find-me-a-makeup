@@ -31,9 +31,6 @@ click==6.7
 click-plugins==1.0.3
 cligj==0.4.0
 cloudpickle==0.4.0
-conda==4.6.3
-conda-build==3.0.22
-conda-verify==2.0.0
 contextlib2==0.5.5
 cryptography==2.4.2
 csvkit==1.0.3
