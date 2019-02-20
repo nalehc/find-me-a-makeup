@@ -7,6 +7,8 @@ Recommender to extract text features of makeup description and find a similar pr
 
 ## Recommender
 
-The newest iteration of the reccomender uses LSA for dimensionality reduction combined with a KNN model of count vectorized reviews. The input is a user generated text string, which can be copy pasted from elsewhere or typed. A flask app is coming very soon!
+The newest iteration of the reccomender uses LSA for dimensionality reduction combined with a KNN model of count vectorized reviews. The input is a user generated text string, which can be copy pasted from elsewhere or typed. 
 
+## NEW!
 
+Flask app is built in the latest commit. Expect a deployment to Heroku very soon!
